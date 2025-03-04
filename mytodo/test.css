@@ -6,46 +6,124 @@
     font-family: "departure";
     src: url("DepartureMono/DepartureMonoNerdFont-Regular.otf");
 }
-body{
-    background-color: rgba(147, 147, 44, 0);
-    background-size:cover;
+html {
+    height: 100%;
+    overflow: auto; /* 允许页面滚动 */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* 占据完整视口高度 */
+    overflow-y: auto; /* 确保只有 body 有滚动条 */
+  }
+  /* 外层容器 */
+  .parallax-container {
+    perspective: 2px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform-style: preserve-3d;
+  }
+  .parallax-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url("image/photo2pixel_download\ \(7\).png");
-    background-repeat: repeat;
-}
+    background-repeat: repeat-y; /* 关键：启用重复 */
+    background-size: 100%; /* 控制重复密度 */
+    transform: translateZ(-2px) scale(5); /* 通过scale抵消Z轴位移 */
+    z-index: -1;
+  }
 
-/* 重置默认样式 */
-button {
+  /* 内容区域 */
+  .content {
+    background: rgba(255, 255, 255, 0);
+    transform: translateZ(0);
+    position: relative;
+    height: 200vh; /* 内容高度（演示滚动效果） */
+    transform-style: preserve-3d;
+  }
+
+  /* 背景层 */
+.background {
+    position: fixed; /* 固定背景 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   /* background-image: url("image/photo2pixel_download\ \(7\).png");*/
+    background-size: cover;
+    background-attachment: fixed; /* 关键属性：固定背景*/
+    z-index: -1; /* 将背景置于内容下方 */
+    transform: translateZ(-1px) scale(3);
+  }
+  .button-container {
+    display: flex;          /* 启用 Flex 布局 */
+    justify-content: space-between; /* 平均分配空间 */
+    gap: 2%;             /* 按钮间距（可选） */
+    width: 100%;
+    height: 5%;       /* 确保容器占满父级宽度 */
+  }
+  
+  .button-container button {
+    flex: 1;               /* 按钮平分剩余空间 */
+    margin : 1%;
+    height : 70%;
+    
     background: none;
     border-style: dashed;
-    padding: 5px;
-    margin: 5px;
     font: inherit;
-    cursor: pointer;
+    cursor : pointer;
     color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
     font-family: "departure";
+    transition: all 0.1s ease;  /* 防止按钮文字换行 */
+  }
+  .button-container button:hover {
+    color:white;
+    background-color: #2c61ff;  /* 背景颜色变深 */
+    transform: translateY(-2px); /* 轻微上移 */
+    box-shadow: 0 8px 10px rgba(0,0,0,0.2); /* 添加阴影 */
+  }
+  .button-container button:active {
+    transform: translateY(1px);   /* 按钮下沉 */
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2); /* 阴影缩小 */
   }
 h1{
     font-family: "departure";
     text-transform: uppercase;
     border-left-style: solid;
-    border-color: rgba(0, 0, 0, 0.361);
+    border-color: rgb(0, 55, 255);
     border-width: 5px ;
     border-radius: 4%;
     color: rgb(255, 255, 255);
-    text-shadow: 2px 2px rgb(0, 17, 255);
+    text-shadow: 2px 2px rgb(0, 55, 255);
     padding: 10px;
+    transition: all 0.1s ease;
+}
+h1:hover{
+    text-shadow:4px 5px #0040ff;
 }
 p{
     font-family: "departure";
     color: rgb(255, 255, 255);
-    text-shadow: 2px 2px rgb(13, 0, 255);
+    text-shadow: 2px 2px rgb(0, 94, 255);
     border-style: solid ;
     border-width: 0px 0px 0px 4px ;
-    border-color: rgb(17, 69, 255);
+    border-color: rgb(0, 55, 255);
+    background-color: transparent;
     letter-spacing : 0.4px;
     word-spacing: 3px;
     padding :1%;
-    margin: 1%;
-
+    margin: 2%;
+    transition:all 0.05s ease;
+}
+p:hover{
+    color: rgb(255, 255, 255);
+    transform:translateY(-1px);
+    background-color: rgba(255, 255, 255, 0.148);
 }

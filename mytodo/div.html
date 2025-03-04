@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- 1. 预留一个容器 -->
+  <div id="movie-list"></div>
+
+  <script>
+    // 2. 定义数据
+    const movies = [
+      { title: "电影A", year: 2023, rating: 9.0 },
+      { title: "电影B", year: 2022, rating: 8.5 },
+    ];
+
+    // 3. 获取容器
+    const container = document.getElementById("movie-list");
+
+    // 4. 循环数据生成 HTML
+    let html = "";
+    movies.forEach(movie => {
+      html += `
+        <div class="movie-item">
+          <h3>${movie.title}</h3>
+          <p>年份：${movie.year}，评分：${movie.rating}</p>
+        </div>
+      `;
+    });
+
+    // 5. 将生成的 HTML 插入容器
+    container.innerHTML = html;
+  </script>
+</body>
+</html>
