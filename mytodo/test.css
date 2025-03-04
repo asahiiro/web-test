@@ -1,6 +1,10 @@
 @font-face {
-    font-family: "tinos";
-    src: url("tinos/TinosNerdFont-Italic.ttf");
+  font-family: "Bigblue";
+  src: url("BigBlueTerminal/BigBlueTermPlusNerdFontPropo-Regular.ttf");
+}
+@font-face {
+    font-family: "Cinzel";
+    src: url("Cinzel/static/Cinzel-Regular.ttf");
 }
 @font-face {
     font-family: "departure";
@@ -105,14 +109,20 @@ html {
   }
 
 h1{
-    font-family: "departure";
-    text-transform: uppercase;
-    border-left-style: solid;
-    border-color: rgb(0, 55, 255);
+    font-family: "Bigblue";
+    text-transform: capitalize;
+    font-variant:small-caps;
+    font-size: 5vw;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px  rgb(0, 51, 235);
+    font-weight: lighter;
+
+    border-bottom-style: solid;
+    border-color: rgb(255, 255, 255);
     border-width: 5px ;
     border-radius: 4%;
-    color: rgb(255, 255, 255);
-    text-shadow: 3px 3px 5px rgb(0, 55, 255);
+
+
     padding: 10px;
     transition: all 0.1s ease;
 }
@@ -139,14 +149,19 @@ h1:hover{
 p{
 
     font-family: "departure";
+    font-weight: lighter;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px rgb(0, 94, 255);
+    text-align: justify;
+    word-spacing: 3px;
+    font-size:2vw;
+
     border-style: solid ;
     border-width: 0px 0px 0px 4px ;
     border-color: rgb(0, 55, 255);
+    
     background-color: transparent;
-    text-align: justify;
-    word-spacing: 3px;
+    
     padding :1%;
     margin: 2%;
     width:70%;
