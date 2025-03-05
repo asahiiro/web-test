@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "Bigblue";
+    src: url("BigBlueTerminal/BigBlueTermPlusNerdFontPropo-Regular.ttf");
+  }
+  @font-face {
+      font-family: "Cinzel";
+      src: url("Cinzel/static/Cinzel-Regular.ttf");
+  }
+  @font-face {
+      font-family: "departure";
+      src: url("DepartureMono/DepartureMonoNerdFont-Regular.otf");
+  }
+  html {
+      height: 100%;
+      overflow: auto; /* 允许页面滚动 */
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* 占据完整视口高度 */
+      overflow-y: auto; /* 确保只有 body 有滚动条 */
+  
+    }
+    /* 外层容器 */
+    .parallax-container {
+      perspective: 3px;
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      transform-style: preserve-3d;
+    }
+    .parallax-container::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("image/photo2pixel_download\(11\).png");
+      background-repeat: repeat; /* 关键：启用重复 */
+      background-size: 100%; /* 控制重复密度 */
+      transform: translateZ(-7px) scale(6); /* 通过scale抵消Z轴位移 */
+      z-index: -1;
+    }
+  
+    /* 内容区域 */
+    .content {
+      background: rgba(255, 255, 255, 0);
+      transform: translateZ(0);
+      position: relative;
+      height: 200vh; /* 内容高度（演示滚动效果） */
+      transform-style: preserve-3d;
+      padding: 5%;
+    }
+  
+    /* 背景层 */
+  .background {
+      position: fixed; /* 固定背景 */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+     /* background-image: url("image/photo2pixel_download\ \(7\).png");*/
+      background-size: cover;
+      background-attachment: fixed; /* 关键属性：固定背景*/
+      z-index: -1; /* 将背景置于内容下方 */
+      transform: translateZ(-2px) scale(3);
+    }
+    .button-container {
+      display: flex;          /* 启用 Flex 布局 */
+      justify-content: space-between; /* 平均分配空间 */
+      gap: 2%;             /* 按钮间距（可选） */
+      width: 100%;
+      height: 5%;       /* 确保容器占满父级宽度 */
+    }
+    
+    .button-container button {
+      flex: 1;               /* 按钮平分剩余空间 */
+      margin : 1%;
+      height : 70%;
+  
+      
+      background: none;
+  
+      border-style: dashed;
+      border-radius: 5%;
+  
+      font: inherit;
+      font-size : 3vw;
+  
+      cursor : pointer;
+      color: rgba(255, 255, 255, 0.546);
+      border-color: rgba(255, 255, 255, 0.534);
+      font-family: "departure";
+      transition: all 0.1s ease;  /* 防止按钮文字换行 */
+    }
+  
+    .button-container button:hover {
+      color:rgb(255, 255, 255);
+      background-color: #17266e5f;  /* 背景颜色变深 */
+      transform: translateY(-2px); /* 轻微上移 */
+      box-shadow: 0 10px 12px rgba(0,0,0,0.2); /* 添加阴影 */
+    }
+  
+    .button-container button:active {
+      transform: translateY(1px);   /* 按钮下沉 */
+      box-shadow: 0 5px 5px rgba(0,0,0,0.2); /* 阴影缩小 */
+    }
+  
+  h1{
+      font-family: "Bigblue";
+      text-transform: capitalize;
+      font-variant:small-caps;
+      font-size: 5vw;
+      color: rgba(255, 255, 255, 0.42);
+      text-shadow: 4px 4px  rgb(0, 15, 67);
+      font-weight: lighter;
+  
+      border-bottom-style: solid;
+      border-color: rgb(0, 1, 55);
+      border-width: 5px ;
+      border-radius: 4%;
+  
+  
+      padding: 10px;
+      transition: all 0.1s ease;
+  }
+  
+  h1:hover{
+      text-shadow:4px 5px #00279c;
+  }
+  
+  .text-container {
+      display: flex;
+      justify-content: center;  /* 水平居中 */     /* 垂直居中 */
+      min-height: 100vh;         /* 至少占满整个视口高度 */
+      margin: 0;                /* 去除默认边距 */
+  }
+  
+    /* 文本区域限制 */
+    .text-box {
+      width:90%;             /* 固定宽度 */
+      max-width: 90%;           /* 响应式：最大占父容器的80% */
+      padding: 5%;            /* 内边距 */
+      border: 1px solid #cccccc00;   /* 可选边框 */
+    }
+  
+  p{
+  
+      font-family: "departure";
+      font-weight: lighter;
+      color: rgb(157, 157, 157);
+      text-shadow: 2px 2px rgb(0, 8, 255);
+      text-align: justify;
+      word-spacing: 3px;
+      font-size:2vw;
+  
+      border-style: solid ;
+      border-width: 0px 0px 0px 4px ;
+      border-color: rgb(0, 23, 107);
+      
+      background-color: transparent;
+      
+      padding :1%;
+      margin: 2%;
+      width:70%;
+      position:relative;
+      transition:all 0.05s ease;
+  }
+  p:hover{
+      color: rgb(161, 161, 161);
+      transform:translateY(-1px);
+      background-color: rgba(255, 255, 255, 0.183);
+  }
