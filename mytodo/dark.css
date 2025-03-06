@@ -32,14 +32,14 @@
     }
     .parallax-container::before {
       content: '';
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url("image/下载.jpg");
+      background-image: url("image/night.png");
       background-repeat: repeat; /* 关键：启用重复 */
-      background-size: 100%; /* 控制重复密度 */
+      background-size: 80%; /* 控制重复密度 */
       transform: translateZ(-7px) scale(6); /* 通过scale抵消Z轴位移 */
       z-index: -1;
     }
@@ -90,15 +90,15 @@
       font-size : 3vw;
   
       cursor : pointer;
-      color: rgba(255, 255, 255, 0.546);
-      border-color: rgba(255, 255, 255, 0.534);
+      color: rgb(175, 162, 162);
+      border-color: rgb(0, 81, 97);
       font-family: "departure";
       transition: all 0.1s ease;  /* 防止按钮文字换行 */
     }
   
     .button-container button:hover {
       color:rgb(255, 255, 255);
-      background-color: #17266e5f;  /* 背景颜色变深 */
+      background-color: #0056605f;  /* 背景颜色变深 */
       transform: translateY(-2px); /* 轻微上移 */
       box-shadow: 0 10px 12px rgba(0,0,0,0.2); /* 添加阴影 */
     }
@@ -107,18 +107,32 @@
       transform: translateY(1px);   /* 按钮下沉 */
       box-shadow: 0 5px 5px rgba(0,0,0,0.2); /* 阴影缩小 */
     }
+
+    #themeButton{
+      width:auto;
+      height:auto;
+  
+      background-image: url('icon/cloudy-night\ \(1\).png');
+      background-size: 50px 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      
+      border-style: none;
+    }
+  
   
   h1{
       font-family: "Bigblue";
       text-transform: capitalize;
       font-variant:small-caps;
       font-size: 5vw;
-      color: rgba(255, 255, 255, 0.42);
-      text-shadow: 4px 4px  rgb(0, 15, 67);
+      color: rgb(205, 205, 205);
+      text-shadow: 4px 4px  rgb(0, 66, 90);
       font-weight: lighter;
   
       border-bottom-style: solid;
-      border-color: rgb(0, 1, 55);
+      border-color: rgb(0, 43, 55);
       border-width: 5px ;
       border-radius: 4%;
   
@@ -128,7 +142,7 @@
   }
   
   h1:hover{
-      text-shadow:4px 5px #00279c;
+      text-shadow: 0 0 25px #00c8ff ;
   }
   
   .text-container {
@@ -150,15 +164,15 @@
   
       font-family: "departure";
       font-weight: lighter;
-      color: rgb(157, 157, 157);
-      text-shadow: 2px 2px rgb(0, 8, 255);
+      color: rgb(176, 176, 176);
+      text-shadow: 1px 1px rgb(0, 133, 156);
       text-align: justify;
       word-spacing: 3px;
       font-size:2vw;
   
       border-style: solid ;
       border-width: 0px 0px 0px 4px ;
-      border-color: rgb(0, 23, 107);
+      border-color: rgb(0, 95, 107);
       
       background-color: transparent;
       
@@ -170,6 +184,8 @@
   }
   p:hover{
       color: rgb(161, 161, 161);
+      text-shadow: 1px 1px 5px #41ecff ;
       transform:translateY(-1px);
-      background-color: rgba(255, 255, 255, 0.183);
+      background-color: rgba(0, 0, 0, 0.212);
+      backdrop-filter: blur(10px);
   }

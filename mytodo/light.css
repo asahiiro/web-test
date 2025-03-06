@@ -107,6 +107,18 @@ html {
     transform: translateY(1px);   /* 按钮下沉 */
     box-shadow: 0 5px 5px rgba(0,0,0,0.2); /* 阴影缩小 */
   }
+  #themeButton{
+    width:auto;
+    height:auto;
+
+    background-image: url('icon/cloudy\ \(1\).png');
+    background-size: 50px 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    
+    border-style: none;
+  }
 
 h1{
     font-family: "Bigblue";
@@ -172,4 +184,5 @@ p:hover{
     color: rgb(255, 255, 255);
     transform:translateY(-1px);
     background-color: rgba(255, 255, 255, 0.148);
+    backdrop-filter: blur(10px);
 }
