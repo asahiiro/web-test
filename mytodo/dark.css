@@ -37,7 +37,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url("image/photo2pixel_download\(11\).png");
+      background-image: url("image/下载.jpg");
       background-repeat: repeat; /* 关键：启用重复 */
       background-size: 100%; /* 控制重复密度 */
       transform: translateZ(-7px) scale(6); /* 通过scale抵消Z轴位移 */
