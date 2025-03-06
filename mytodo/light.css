@@ -96,28 +96,39 @@ html {
     transition: all 0.1s ease;  /* 防止按钮文字换行 */
   }
 
-  .button-container button:hover {
+  .button-container  button.normal:hover {
     color:white;
     background-color: #002aff5f;  /* 背景颜色变深 */
     transform: translateY(-2px); /* 轻微上移 */
     box-shadow: 0 10px 12px rgba(0,0,0,0.2); /* 添加阴影 */
   }
 
-  .button-container button:active {
+  .button-container  button.normal:active {
     transform: translateY(1px);   /* 按钮下沉 */
     box-shadow: 0 5px 5px rgba(0,0,0,0.2); /* 阴影缩小 */
   }
-  #themeButton{
+
+  .button-container button.noborder {
     width:auto;
     height:auto;
 
     background-image: url('icon/cloudy\ \(1\).png');
-    background-size: 50px 50px;
+    background-size: 45px 45px;
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
     
     border-style: none;
+  }
+
+  .button-container button.noborder:hover {
+    color:rgba(255, 255, 255, 0);
+    background-color: #00000000;  /* 背景颜色变深 */
+    transform: translateY(-2px); /* 轻微上移 */
+  }
+    .button-container  button.noborder:active {
+    transform: translateY(1px);   /* 按钮下沉 */
+
   }
 
 h1{
