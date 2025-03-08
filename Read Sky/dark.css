@@ -1,14 +1,14 @@
 @font-face {
     font-family: "Bigblue";
-    src: url("BigBlueTerminal/BigBlueTermPlusNerdFontPropo-Regular.ttf");
+    src: url("font/BigBlueTerminal/BigBlueTermPlusNerdFontPropo-Regular.ttf");
   }
   @font-face {
       font-family: "Cinzel";
-      src: url("Cinzel/static/Cinzel-Regular.ttf");
+      src: url("font/Cinzel/static/Cinzel-Regular.ttf");
   }
   @font-face {
       font-family: "departure";
-      src: url("DepartureMono/DepartureMonoNerdFont-Regular.otf");
+      src: url("font/DepartureMono/DepartureMonoNerdFont-Regular.otf");
   }
   html {
       height: 100%;
@@ -47,10 +47,8 @@
     /* 内容区域 */
     .content {
       background: rgba(255, 255, 255, 0);
-      transform: translateZ(0);
       position: relative;
       height: 200vh; /* 内容高度（演示滚动效果） */
-      transform-style: preserve-3d;
       padding: 5%;
     }
   
@@ -67,7 +65,12 @@
       z-index: -1; /* 将背景置于内容下方 */
       transform: translateZ(-2px) scale(3);
     }
+
     .button-container {
+      position: sticky;
+      top: 5px;
+      z-index: 1;
+    
       display: flex;          /* 启用 Flex 布局 */
       justify-content: space-between; /* 平均分配空间 */
       gap: 2%;             /* 按钮间距（可选） */
@@ -94,6 +97,11 @@
       border-color: rgb(0, 81, 97);
       font-family: "departure";
       transition: all 0.1s ease;  /* 防止按钮文字换行 */
+    }
+
+    .button-container  button.normal {
+      background: rgba(255, 255, 255, 0); /* Semi-transparent background */
+      backdrop-filter: blur(5px); /* Blur the background behind the button */
     }
   
     .button-container button.normal:hover {
@@ -187,8 +195,8 @@
       background-color: transparent;
       
       padding :1%;
-      margin: 2%;
-      width:70%;
+      margin: 2% auto;
+      width:80%;
       position:relative;
       transition:all 0.05s ease;
   }
