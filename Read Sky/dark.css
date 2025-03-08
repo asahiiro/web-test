@@ -28,7 +28,6 @@
       height: 100vh;
       overflow-x: hidden;
       overflow-y: auto;
-      transform-style: preserve-3d;
     }
     .parallax-container::before {
       content: '';
@@ -39,7 +38,7 @@
       bottom: 0;
       background-image: url("image/night.png");
       background-repeat: repeat; /* 关键：启用重复 */
-      background-size: 80%; /* 控制重复密度 */
+      background-size: 100%; /* 控制重复密度 */
       transform: translateZ(-7px) scale(6); /* 通过scale抵消Z轴位移 */
       z-index: -1;
     }
@@ -65,12 +64,12 @@
       z-index: -1; /* 将背景置于内容下方 */
       transform: translateZ(-2px) scale(3);
     }
-
     .button-container {
       position: sticky;
       top: 5px;
       z-index: 1;
-    
+
+
       display: flex;          /* 启用 Flex 布局 */
       justify-content: space-between; /* 平均分配空间 */
       gap: 2%;             /* 按钮间距（可选） */
@@ -82,9 +81,6 @@
       flex: 1;               /* 按钮平分剩余空间 */
       margin : 1%;
       height : 70%;
-  
-      
-      background: none;
   
       border-style: dashed;
       border-radius: 5%;
@@ -98,12 +94,12 @@
       font-family: "departure";
       transition: all 0.1s ease;  /* 防止按钮文字换行 */
     }
-
-    .button-container  button.normal {
-      background: rgba(255, 255, 255, 0); /* Semi-transparent background */
-      backdrop-filter: blur(5px); /* Blur the background behind the button */
-    }
   
+    .button-container  button.normal {
+      background: rgba(255, 255, 255, 0); 
+      backdrop-filter: blur(5px); 
+    }
+
     .button-container button.normal:hover {
       color:rgb(255, 255, 255);
       background-color: #0056605f;  /* 背景颜色变深 */
@@ -120,7 +116,7 @@
       width:auto;
       height:auto;
   
-      background-image: url('icon/cloudy-night\ \(1\).png');
+      background-image: url('icon/moonstar.png');
       background-size: 45px 45px;
       background-position: center;
       background-repeat: no-repeat;
@@ -134,6 +130,7 @@
       background-color: #00000000;  /* 背景颜色变深 */
       transform: translateY(-2px); /* 轻微上移 */
     }
+
       .button-container  button.noborder:active {
       transform: translateY(1px);   /* 按钮下沉 */
   
