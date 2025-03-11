@@ -9,3 +9,7 @@ function changeTheme(){
         theme.setAttribute('href','light.css');
     }
 }
+document.getElementById('index-button').addEventListener('click', function() {
+    var indexContent = document.getElementById('index-content');
+    indexContent.classList.toggle('hidden');
+});
