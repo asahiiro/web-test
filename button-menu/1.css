@@ -1,0 +1,33 @@
+.button-container {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.index-wrapper {
+    position: relative; /* Makes this the reference for the absolute positioning of index-content */
+}
+
+.sticky-button {
+    padding: 10px 20px; /* Adjust button size as needed */
+}
+
+#index-content {
+    position: absolute;
+    top: 100%; /* Positions it directly below the index button */
+    left: 0;   /* Aligns it with the left edge of the button */
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds depth */
+    z-index: 1001; /* Ensures it appears above other page content */
+    padding: 10px;
+    width: max-content; /* Keeps the width based on content */
+}
+
+.hidden {
+    display: none; /* Hides the index content by default */
+}

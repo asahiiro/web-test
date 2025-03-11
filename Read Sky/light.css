@@ -166,6 +166,8 @@ html {
 }  
   
 .text-box {
+
+    float: left;
     position: sticky;
     top: 100px;
 
@@ -208,3 +210,11 @@ p:hover{
     backdrop-filter: blur(10px);
 }
 
+.index-box{
+  border-right: solid;
+  border-color: azure;
+  z-index: 1;
+  float: left;
+  display:block;
+
+}
