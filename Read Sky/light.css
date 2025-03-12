@@ -27,7 +27,6 @@ html {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    transform-style: preserve-3d;  
   }
   .parallax-container::before {
     content: '';
