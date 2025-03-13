@@ -4,12 +4,12 @@ let guessCount = 0;
 let guess = '';
 let message = '猜一个1-100之间的数字吧！';
 let theme = 'theme-light';
-const lightBackgroundImage = 'https://web-test-50s8f.kinsta.page/data/image/bakery-room.jpg';
-const lightCharacterImage = 'https://web-test-50s8f.kinsta.page/data/image/angeh.png';
-const lightIconImage = 'https://web-test-50s8f.kinsta.page/data/icon/sunf.png';
-const darkBackgroundImage = 'https://web-test-50s8f.kinsta.page/data/image/bakery-night.jpg';
-const darkCharacterImage = 'https://web-test-50s8f.kinsta.page/data/image/tokoh.png';
-const darkIconImage = 'https://web-test-50s8f.kinsta.page/data/icon/moonstar.png';
+const lightBackgroundImage = 'https://data-wyzmv.kinsta.page/image/bakery-room.jpg';
+const lightCharacterImage = 'https://data-wyzmv.kinsta.page/image/angeh.png';
+const lightIconImage = 'https://data-wyzmv.kinsta.page/icon/sunf.png';
+const darkBackgroundImage = 'https://data-wyzmv.kinsta.page/image/bakery-night.jpg';
+const darkCharacterImage = 'https://data-wyzmv.kinsta.page/image/tokoh.png';
+const darkIconImage = 'https://data-wyzmv.kinsta.page/icon/moonstar.png';
 
 // DOM 元素
 const container = document.getElementById('container');
