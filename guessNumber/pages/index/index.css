@@ -1,0 +1,244 @@
+/* pages/index/index.css */
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('https://web-test-50s8f.kinsta.page/data/font/ark-pixel-font-12px/ark-pixel-12px-monospaced-zh_cn.ttf');
+}
+
+/* 容器 */
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* 40rpx -> 20px */
+  justify-content: space-evenly;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px; /* 10rpx -> 5px */
+  margin-top: auto;
+}
+
+.character-container {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* 背景 */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size:;
+  z-index: -1;
+}
+
+/* 图标 */
+.icon {
+  height: 50px; /* 100rpx -> 50px */
+  width: 50px; /* 100rpx -> 50px */
+}
+
+/* 图标动画 */
+.icon-container:active .icon {
+  transform: translateY(2.5px) scale(1.1); /* 5rpx -> 2.5px */
+  transition: transform 0.1s ease;
+}
+
+/* 人物 */
+.character {
+  width: 200px; /* 400rpx -> 200px */
+  height: 285px; /* 570rpx -> 285px */
+  margin-top: 25px; /* 50rpx -> 25px */
+}
+
+/* JS 动画 */
+.character-active {
+  transform: translateY(-10px); /* -20rpx -> -10px */
+}
+
+/* 点击动画 */
+.character-container:active {
+  transition: transform 0.3s ease;
+  transform: translateY(-10px); /* -20rpx -> -10px */
+}
+
+/* 计数器 */
+.guessCount {
+  font-family: 'Pixel';
+  font-size: 80px; /* 100rpx -> 50px */
+  color: white;
+  transition: all 0.1s ease;
+}
+
+/* 点击动画 */
+.guessCount:active {
+  transform: translateY(1.5px) scale(1.1); /* 3rpx -> 1.5px */
+}
+
+/* JS 动画 */
+.guessCount-active {
+  animation: CountAnimate 0.3s ease-in-out;
+}
+
+@keyframes CountAnimate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 对话泡 */
+.theme-light .chat-bubble {
+  font-family: 'Pixel';
+  font-size: 30px; /* 40rpx -> 20px */
+  padding: 20px; /* 20rpx -> 10px */
+  max-width: 80%;
+  height: auto;
+  text-align: center;
+
+  color: rgb(255, 255, 255);
+  background: none;
+  border-color: rgb(255, 0, 0);
+  border-style: dashed;
+  border-radius: 10px; /* 20rpx -> 10px */
+  transition: all 0.1s ease;
+}
+
+.theme-dark .chat-bubble {
+  font-family: 'Pixel';
+  font-size: 30px; /* 40rpx -> 20px */
+  padding: 20px; /* 20rpx -> 10px */
+  max-width: 80%;
+  height: auto;
+  text-align: center;
+
+  color: rgb(255, 255, 255);
+  background: none;
+  border-color: #ff7b00;
+  border-style: dashed;
+  border-radius: 10px; /* 20rpx -> 10px */
+  transition: all 0.1s ease;
+}
+
+/* 点击动画 */
+.chat-bubble:active {
+  color: rgb(255, 255, 255);
+  background-color: #ffffff25;
+  transform: translateY(1.5px) scale(0.96); /* 3rpx -> 1.5px */
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2); /* 10px 12px -> 5px 6px */
+}
+
+/* JS 动画 */
+.chat-bubble-active {
+  animation: bubbleAnimate 0.3s ease-in-out;
+}
+
+@keyframes bubbleAnimate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.theme-light .triangle {
+  margin: 10px;
+  transform: translateX(-50%);
+  border: 5px solid transparent; /* 10rpx -> 5px */
+  border-top-color: rgb(255, 0, 0);
+}
+
+.theme-dark .triangle {
+  margin: 10px;
+  transform: translateX(-50%);
+  border: 5px solid transparent; /* 10rpx -> 5px */
+  border-top-color: #ff7b00;
+}
+
+/* 输入框 */
+.theme-light .input {
+  font-family: 'Pixel';
+  background-color: transparent;
+  font-size: large;
+
+  width: 80%;
+  height: 40px; /* 80rpx -> 40px */
+  border: dashed rgb(255, 0, 0);
+
+  color: rgb(255, 255, 255);
+
+  border-radius: 5px; /* 10rpx -> 5px */
+  padding: 0 10px; /* 20rpx -> 10px */
+  text-align: center;
+  margin-bottom: 15px; /* 30rpx -> 15px */
+}
+
+.theme-dark .input {
+  font-family: 'Pixel';
+  background-color: transparent;
+  font-size: large;
+
+  width: 80%;
+  height: 40px; /* 80rpx -> 40px */
+  border: dashed #ff7b00;
+  color: white;
+  border-radius: 5px; /* 10rpx -> 5px */
+  padding: 0 10px; /* 20rpx -> 10px */
+  text-align: center;
+  margin-bottom: 15px; /* 30rpx -> 15px */
+}
+
+.input:active {
+  transform: translateY(-1px) scale(1.1);
+  transition: all 0.1s ease;
+}
+
+/* 一般按钮 */
+.theme-light .normal {
+  width: 60%;
+  height: 40px; /* 80rpx -> 40px */
+  background: none;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 0, 0);
+  border-style: dashed;
+  font-family: 'Pixel';
+  font-size: 20px; /* 40rpx -> 20px */
+  border-radius: 5px; /* 10rpx -> 5px */
+  margin-bottom: 15px; /* 30rpx -> 15px */
+  transition: all 0.1s ease;
+}
+
+.theme-dark .normal {
+  width: 60%;
+  height: 40px; /* 80rpx -> 40px */
+  background: none;
+  color: rgb(255, 255, 255);
+  border-color: #ff7b00;
+  border-style: dashed;
+  font-family: 'Pixel';
+  font-size: 20px; /* 40rpx -> 20px */
+  border-radius: 5px; /* 10rpx -> 5px */
+  margin-bottom: 15px; /* 30rpx -> 15px */
+  transition: all 0.1s ease;
+}
+
+.normal:active {
+  color: rgb(255, 255, 255);
+  background-color: #ffffff38;
+  transform: translateY(1.5px) scale(0.96); /* 3rpx -> 1.5px */
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2); /* 10px 12px -> 5px 6px */
+}

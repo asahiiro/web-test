@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Guess-Number</title>
+</head>
+<body>
+  <div id="container" class="container">
+    <img id="background" class="background" src="" alt="背景图片">
+  
+    <div class="chat-container">
+      <div id="guessCount" class="guessCount"></div>
+      <div id="chatBubble" class="chat-bubble"></div>
+      <div class="triangle"></div>
+      <div id="characterContainer" class="character-container" onclick="characterTap()">
+        <img id="character" class="character" src="" alt="角色图片">
+      </div>
+    </div>
+    
+    <input id="inputGuess" class="input" type="number" placeholder="请输入1-100之间的数字" oninput="inputGuess(this.value)" value="">
+    <button class="normal" onclick="checkGuess()">我猜是</button>
+    <button class="normal" onclick="resetGame()">再来</button>
+  
+    <div class="icon-container" onclick="toggleTheme()">
+      <img id="icon" class="icon" src="" alt="主题切换图标">
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
