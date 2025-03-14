@@ -4,11 +4,18 @@
   font-family: 'Pixel';
   src: url('https://data-wyzmv.kinsta.page/font/ark-pixel-font-12px/ark-pixel-12px-monospaced-zh_cn.ttf');
 }
+/* html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+} 
+*/
 
 /* 容器 */
 .container {
   display: flex;
-  height: 100vh;
+  height: auto;
   flex-direction: column;
   align-items: center;
   padding: 20px; /* 40rpx -> 20px */
@@ -30,10 +37,13 @@
 
 /* 背景 */
 .background {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
-  background-size:;
+  height: 100vh;
+  object-fit: cover; /* Covers the area while preserving aspect ratio */
+
+      top: 0;
+      left: 0;
   z-index: -1;
 }
 
@@ -51,9 +61,9 @@
 
 /* 人物 */
 .character {
-  width: 200px; /* 400rpx -> 200px */
-  height: 285px; /* 570rpx -> 285px */
-  margin-top: 25px; /* 50rpx -> 25px */
+  width: 200px;
+  height: 285px;
+  margin-top: 10px;
 }
 
 /* JS 动画 */
@@ -156,14 +166,14 @@
 }
 
 .theme-light .triangle {
-  margin: 10px;
+  margin-top: 10px;
   transform: translateX(-50%);
   border: 5px solid transparent; /* 10rpx -> 5px */
   border-top-color: rgb(255, 0, 0);
 }
 
 .theme-dark .triangle {
-  margin: 10px;
+  margin-top: 10px;
   transform: translateX(-50%);
   border: 5px solid transparent; /* 10rpx -> 5px */
   border-top-color: #ff7b00;
