@@ -1,5 +1,5 @@
 //key
-const apiKey = '2f7c1f0473c07d78c0f430480094e126';
+// const apiKey = '2f7c1f0473c07d78c0f430480094e126';
 
 //DOM
 const temperature = document.getElementById('temperature'); 
@@ -11,6 +11,7 @@ const week = document.getElementById('week');
 const winddir = document.getElementById('winddir');
 const windpow = document.getElementById('windpow');
 const reporttime = document.getElementById('reporttime');
+const foreContainer = document.getElementsByClassName('forecast-container'); 
 
 //天气相关
 function getAdcode() {
@@ -81,5 +82,14 @@ getAdcode()
     alert('获取天气数据失败，请检查 API key 或网络连接');
   });
 
+//循环生成
+for(let i = 0 ; i < 3 ; i++){
+    let icon = document.createElement("img");
+    icon.classname = "icon";
+    let fweather = document. createElement("p");
+    fweather.textContent = '这里填天气';
+}
+
 //加载中
 setTimeout(() =>     document.querySelector('.loading').style.display = 'none',2000);
+
