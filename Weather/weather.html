@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌤</title>
+    <link rel="stylesheet" href="weather.css">
 </head>
 <body>
     
-  <view class="loading">
-    <view>天气数据加载中...</view>
-  </view>
+  <div class="loading">
+    <img src="icon/bunny.gif" alt="🌤" id="load-img">
+    <div>天气数据加载中...</div>
+  </div>
 <!--待实现的功能：
           
 1.API调用 √
-2.加载页面 
-3.JS循环生成元素
+2.加载页面 √
+3.JS循环生成元素 
 4.CSS定点滑动功能 
   
 -->
@@ -24,63 +26,63 @@
  
 
 -->
-  <view class="page1">
-      <view id="temperature"></view><!--目前温度-->
-      <view id="tempRange"></view><!--夜间与日间温度-->
+  <div class="page1">
+      <div id="temperature"></div><!--目前温度-->
+      <div id="tempRange"></div><!--夜间与日间温度-->
       <img src="" id="icon1"/>
-      <view id="weather"></view><!--天气-->
-      <view id="location">
+      <div id="weather"></div><!--天气-->
+      <div id="location">
         <p id="city"> </p><!--城市-->
       <p id="province"></p><!--省份-->
-      </view>
-      <view id="week"></view><!--时间-->
-      <view id="wind">
+      </div>
+      <div id="week"></div><!--时间-->
+      <div id="wind">
         <p id="winddir"></p><!--风向-->
         <p id="windpow"></p><!--风力-->
-      </view>
-      <view id="reporttime"></view><!--发布时间-->
-    </view>
+      </div>
+      <div id="reporttime"></div><!--发布时间-->
+    </div>
 
 <!-- 后三天的数据插在这里 -->
-    <view class="forecast-container">
-        <view class="forecast">
+    <div class="forecast-container">
+        <div class="forecast">
           <img src="" class="icon2"/>
-          <view></view>
-          <view> °C ~ °C</view>
-          <view></view>
-          <view>风</view>
-          <view>级</view>
-        </view>
-    </view>
+          <div></div>
+          <div> °C ~ °C</div>
+          <div></div>
+          <div>风</div>
+          <div>级</div>
+        </div>
+    </div>
 <!-- 后三天的数据插在这里 -->
-  </view>
+  </div>
 
   <!-- 预报天气插在这里 -->
-  <view class="page2">
-    <view class="other-container">
-        <view class="each-day ">
-          <view></view>
-          <view class="day">
-          <view>日间</view>
+  <div class="page2">
+    <div class="other-container">
+        <div class="each-day ">
+          <div></div>
+          <div class="day">
+          <div>日间</div>
             <img src="" class="icon3"/>
-            <view></view>
-            <view>°C</view>
-            <view>风级</view>
+            <div></div>
+            <div>°C</div>
+            <div>风级</div>
 
-          </view>
+          </div>
 
-          <view class="night">
-            <view>夜间</view>
+          <div class="night">
+            <div>夜间</div>
             <img src="" class="icon3" />
-            <view></view>
-            <view>°C</view>
-            <view>风级</view>
+            <div></div>
+            <div>°C</div>
+            <div>风级</div>
 
-          </view>
+          </div>
 
-        </view>
-    </view>
-  </view>
+        </div>
+    </div>
+  </div>
 
 <!-- 预报天气插在这里 -->
   <script src="weather.js"></script>

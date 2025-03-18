@@ -1,6 +1,5 @@
+//key
 const apiKey = '2f7c1f0473c07d78c0f430480094e126';
-
-
 
 //DOM
 const temperature = document.getElementById('temperature'); 
@@ -13,7 +12,7 @@ const winddir = document.getElementById('winddir');
 const windpow = document.getElementById('windpow');
 const reporttime = document.getElementById('reporttime');
 
-
+//天气相关
 function getAdcode() {
     return fetch(`https://restapi.amap.com/v3/ip?key=${apiKey}`)
     .then(response => response.json())
@@ -81,3 +80,6 @@ getAdcode()
     console.error('错误详情:', error.message);
     alert('获取天气数据失败，请检查 API key 或网络连接');
   });
+
+//加载中
+setTimeout(() =>     document.querySelector('.loading').style.display = 'none',2000);
