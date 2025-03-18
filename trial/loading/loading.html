@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加载页面示例</title>
+  <style>
+    /* 加载页面样式 */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    /* iframe 样式 */
+    .loading iframe {
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 加载页面 -->
+  <div class="loading">
+    <iframe src="https://assets.pinterest.com/ext/embed.html?id=1150529036035272741" height="445" width="345" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <!-- 页面主要内容 -->
+  <h1>欢迎访问我的网页</h1>
+  <p>这是一个简单的示例页面。</p>
+
+  <script>
+    // 页面加载完成后隐藏“加载中”
+    setTimeout(function() {
+    document.querySelector('.loading').style.display = 'none';
+  }, 2000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+    <swiper-item>
+      <view class="loading" wx:if="{{isLoading}}">
+        <view>天气数据加载中...</view>
+      </view>
+  
+      <view class="page1 {{'page1-' + currentTheme}}" wx:else>
+        <view class="main-container">
+          <view class="temp">{{weather.temperature}}°C</view><!--目前温度-->
+          <view class="temprange">{{forecasts[0].nighttemp}}°C/{{forecasts[0].daytemp}}°C</view><!--夜间与日间温度-->
+          <image src="{{forecasts[0].dayIcon}}" class="icon1"/>
+          <view class="weather">{{weather.weather}}</view><!--天气-->
+          <view class="location">
+            <text class="city">{{weather.city}} </text><!--城市-->
+          <text class="province">{{weather.province}}</text><!--省份-->
+          </view>
+          <view class="week">{{forecasts[0].week}}</view><!--时间-->
+          <view class="wind">
+            <text class="winddir">{{weather.winddirection}}风 </text><!--风向-->
+            <text class="windpow ">{{weather.windpower}}级</text><!--风力-->
+          </view>
+          <view class="reporttime">{{weather.reporttime}}</view><!--发布时间-->
+        </view>
+  
+        <view class="forecast-container">
+          <block wx:for="{{lastThreeDays}}" wx:key="date">
+            <view class="forecast">
+              <image src="{{item.dayIcon}}" class="icon2"/>
+              <view>{{item.dayweather}}</view>
+              <view> {{item.nighttemp}}°C ~ {{item.daytemp}}°C</view>
+              <view>{{item.week}}</view>
+              <view>{{item.daywind}}风</view>
+              <view>{{item.daypower}}级</view>
+            </view>
+          </block>
+        </view>
+        
+      </view>
+    </swiper-item>
+  
+    <swiper-item>
+      <view class="loading" wx:if="{{isLoading}}">
+        <view>天气数据加载中...</view>
+      </view>
+      <view class="page2 {{'page2-' + currentTheme}}" wx:else>
+        <view class="other-container">
+          <block wx:for="{{forecasts}}" wx:key="date">
+            <view class="each-day {{'each-day-' + currentTheme}}">
+              <view>{{item.week}}</view>
+              <view class="day">
+              <view>日间</view>
+                <image src="{{item.dayIcon}}" class="icon3"/>
+                <view>{{item.dayweather}}</view>
+                <view>{{item.daytemp}}°C</view>
+                <view>{{item.daywind}}风{{item.daypower}}级</view>
+  
+              </view>
+  
+              <view class="night">
+                <view>夜间</view>
+                <image src="{{item.nightIcon}}" class="icon3" />
+                <view>{{item.nightweather}}</view>
+                <view>{{item.nighttemp}}°C</view>
+                <view>{{item.nightwind}}风{{item.nightpower}}级</view>
+  
+              </view>
+  
+            </view>
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+  
+  </swiper>
