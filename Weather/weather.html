@@ -11,9 +11,9 @@
     <view>天气数据加载中...</view>
   </view>
 <!--待实现的功能：
-
-1.API调用
-2.加载页面
+          
+1.API调用 √
+2.加载页面 
 3.JS循环生成元素
 4.CSS定点滑动功能 
   
@@ -25,32 +25,31 @@
 
 -->
   <view class="page1">
-    <view class="main-container">
-      <view class="temp">{{weather.temperature}}°C</view><!--目前温度-->
-      <view class="temprange">{{forecasts[0].nighttemp}}°C/{{forecasts[0].daytemp}}°C</view><!--夜间与日间温度-->
-      <img src="{{forecasts[0].dayIcon}}" class="icon1"/>
-      <view class="weather">{{weather.weather}}</view><!--天气-->
-      <view class="location">
-        <p class="city">{{weather.city}} </p><!--城市-->
-      <p class="province">{{weather.province}}</p><!--省份-->
+      <view id="temperature">°C</view><!--目前温度-->
+      <view id="tempRange">°C/°C</view><!--夜间与日间温度-->
+      <img src="" id="icon1"/>
+      <view id="weather"></view><!--天气-->
+      <view id="location">
+        <p id="city"> </p><!--城市-->
+      <p id="province"></p><!--省份-->
       </view>
-      <view class="week">{{forecasts[0].week}}</view><!--时间-->
-      <view class="wind">
-        <p class="winddir">{{weather.winddirection}}风 </p><!--风向-->
-        <p class="windpow ">{{weather.windpower}}级</p><!--风力-->
+      <view id="week"></view><!--时间-->
+      <view id="wind">
+        <p id="winddir">风 </p><!--风向-->
+        <p id="windpow ">级</p><!--风力-->
       </view>
-      <view class="reporttime">{{weather.reporttime}}</view><!--发布时间-->
+      <view id="reporttime"></view><!--发布时间-->
     </view>
 
 <!-- 后三天的数据插在这里 -->
     <view class="forecast-container">
         <view class="forecast">
           <img src="" class="icon2"/>
-          <view>{{item.dayweather}}</view>
-          <view> {{item.nighttemp}}°C ~ {{item.daytemp}}°C</view>
-          <view>{{item.week}}</view>
-          <view>{{item.daywind}}风</view>
-          <view>{{item.daypower}}级</view>
+          <view></view>
+          <view> °C ~ °C</view>
+          <view></view>
+          <view>风</view>
+          <view>级</view>
         </view>
     </view>
 <!-- 后三天的数据插在这里 -->
@@ -60,22 +59,22 @@
   <view class="page2">
     <view class="other-container">
         <view class="each-day ">
-          <view>{{item.week}}</view>
+          <view></view>
           <view class="day">
           <view>日间</view>
             <img src="" class="icon3"/>
-            <view>{{item.dayweather}}</view>
-            <view>{{item.daytemp}}°C</view>
-            <view>{{item.daywind}}风{{item.daypower}}级</view>
+            <view></view>
+            <view>°C</view>
+            <view>风级</view>
 
           </view>
 
           <view class="night">
             <view>夜间</view>
-            <img src="{{item.nightIcon}}" class="icon3" />
-            <view>{{item.nightweather}}</view>
-            <view>{{item.nighttemp}}°C</view>
-            <view>{{item.nightwind}}风{{item.nightpower}}级</view>
+            <img src="" class="icon3" />
+            <view></view>
+            <view>°C</view>
+            <view>风级</view>
 
           </view>
 
@@ -84,6 +83,6 @@
   </view>
 
 <!-- 预报天气插在这里 -->
-
+  <script src="weather.js"></script>
 </body>
 </html>
