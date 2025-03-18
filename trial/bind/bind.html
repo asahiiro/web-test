@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四天天气预报</title>
+  <style>
+    .weather-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div id="weather-container"></div>
+
+  <script>
+    const weatherData = [
+      {
+        date: "2023-10-01",
+        temperature: "25°C",
+        humidity: "60%",
+        windSpeed: "10 km/h"
+      },
+      {
+        date: "2023-10-02",
+        temperature: "22°C",
+        humidity: "65%",
+        windSpeed: "15 km/h"
+      },
+      {
+        date: "2023-10-03",
+        temperature: "20°C",
+        humidity: "70%",
+        windSpeed: "20 km/h"
+      },
+      {
+        date: "2023-10-04",
+        temperature: "18°C",
+        humidity: "75%",
+        windSpeed: "25 km/h"
+      }
+    ];
+
+    const container = document.getElementById("weather-container");
+
+    weatherData.forEach(day => {
+      const card = document.createElement("div");
+      card.className = "weather-card";
+
+      const date = document.createElement("h3");
+      date.textContent = day.date;
+      card.appendChild(date);
+
+      const temp = document.createElement("p");
+      temp.textContent = `温度: ${day.temperature}`;
+      card.appendChild(temp);
+
+      const humidity = document.createElement("p");
+      humidity.textContent = `湿度: ${day.humidity}`;
+      card.appendChild(humidity);
+
+      const windSpeed = document.createElement("p");
+      windSpeed.textContent = `风速: ${day.windSpeed}`;
+      card.appendChild(windSpeed);
+
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

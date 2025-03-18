@@ -18,15 +18,11 @@
       align-items: center;
       z-index: 9999;
     }
-    /* iframe 样式 */
-    .loading iframe {
-      border: none;
-    }
   </style>
 </head>
 <body>
   <!-- 加载页面 -->
-  <div class="loading">
+  <div class="loading" style="display: flex;flex-direction: column; justify-content: center;flex-wrap: wrap;">
     <div>    <img src="bunny.gif" height="445" width="auto" scrolling="no"></div>
     <div>loading</div>
   </div>

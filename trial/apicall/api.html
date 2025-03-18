@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四天天气预报</title>
+  <style>
+    .weather-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h3 {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+    p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="weather-container"></div>
+
+  <script>
+    // 替换为你的高德 API key
+    const apiKey = '2f7c1f0473c07d78c0f430480094e126';
+
+    // 第一步：通过 IP 定位获取当前城市的 adcode
+    function getAdcode() {
+      return fetch(`https://restapi.amap.com/v3/ip?key=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === '1') {
+            return data.adcode; // 返回当前城市的 adcode
+          } else {
+            throw new Error('获取 adcode 失败');
+          }
+        });
+    }
+
+    // 第二步：使用 adcode 获取四天天气预报
+    function getWeather(adcode) {
+      return fetch(`https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=${apiKey}&extensions=all`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === '1') {
+            return data.forecasts[0].casts; // 返回四天天气预报数据
+          } else {
+            throw new Error('获取天气数据失败');
+          }
+        });
+    }
+
+    // 第三步：将天气数据渲染到页面
+    function renderWeather(data) {
+      const container = document.getElementById('weather-container');
+      data.forEach(day => {
+        const card = document.createElement('div');
+        card.className = 'weather-card';
+
+        const date = document.createElement('h3');
+        date.textContent = day.date;
+
+        const weather = document.createElement('p');
+        weather.textContent = `天气: ${day.dayweather}`;
+
+        const temp = document.createElement('p');
+        temp.textContent = `温度: ${day.nighttemp}°C ~ ${day.daytemp}°C`;
+
+        const wind = document.createElement('p');
+        wind.textContent = `风向: ${day.daywind}风 ${day.daypower}级`;
+
+        card.appendChild(date);
+        card.appendChild(weather);
+        card.appendChild(temp);
+        card.appendChild(wind);
+
+        container.appendChild(card);
+      });
+    }
+
+    // 执行流程：获取 adcode -> 获取天气数据 -> 渲染到页面
+    getAdcode()
+      .then(adcode => getWeather(adcode))
+      .then(weatherData => renderWeather(weatherData))
+      .catch(error => {
+        console.error(error);
+        alert('获取天气数据失败，请检查 API key 或网络连接');
+      });
+  </script>
+</body>
+</html>

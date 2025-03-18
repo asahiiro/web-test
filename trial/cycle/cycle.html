@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重复生成内容</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 空的容器，用来放生成的卡片 -->
+    <div id="container"></div>
+
+    <script>
+        // 获取容器
+        var container = document.getElementById("container");
+
+        // 设置要生成的内容数量
+        var numCards = 5;
+
+        // 用循环生成内容
+        for (var i = 1; i <= numCards; i++) {
+            // 创建一个卡片
+            var card = document.createElement("div");
+            card.className = "card";
+
+            // 添加标题
+            var title = document.createElement("h3");
+            title.textContent = "卡片 " + i;
+
+            // 添加文字内容
+            var content = document.createElement("p");
+            content.textContent = "这是第 " + i + " 个卡片的内容。";
+
+            // 把标题和内容放进卡片
+            card.appendChild(title);
+            card.appendChild(content);
+
+            // 把卡片放进容器
+            container.appendChild(card);
+        }
+    </script>
+</body>
+</html>
