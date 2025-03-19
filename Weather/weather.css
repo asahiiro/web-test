@@ -1,10 +1,16 @@
-
+/* pages/index/index.wxss */
 @font-face {
     font-family: 'Pixel';
     src: url('https://data-wyzmv.kinsta.page/font/ark-pixel-font-12px/ark-pixel-12px-monospaced-zh_cn.ttf');
   }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-.loading{
+  .loading {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,182 +19,183 @@
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 999;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    
 }
-#load-img{
+
+#load-img {
     height: 150px;
     width: auto;
 }
   
+  .page1, .page2 {
+    font-family: 'Pixel';
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease, color 0.5s ease; /* 添加过渡效果 */
+  }
+  
+  .page1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.page1, .page2 {
-font-family: 'Pixel';
-height: 100%;
-width: 100%;
-background-size: cover; /* 确保背景图片铺满 */
-background-position: center;
-transition: background-image 0.5s ease, color 0.5s ease; /* 添加过渡效果 */
-}
-
-.page1 {
-display: flex;
-flex-direction: column;
-}
-
-/* 以下保持不变 */
-.icon1 { height: 200rpx; width: 200rpx; }
-.icon2 { height: 150rpx; width: 150rpx; }
-.icon3 { height: 100rpx; width: 100rpx; }
-
-.main-container {
-display: flex;
-height: 65%;
-width: 100%;
-flex-direction: column;
-align-items: center;
-gap: 20rpx;
-}
-
-/*main-container 中的元素*/
-.temp { margin-top: 100rpx; font-size: 200rpx; }
-.temprange { font-size: 40rpx; }
-.weather { font-size: 50rpx; }
-.location { font-size: 40rpx; }
-.week { font-size: large; }
-.wind { font-size: large; }
-.reporttime { margin-top: auto; font-size: large; }
-
-.forecast-container {
-display: flex;
-height: 35%;
-width: 100%;
-justify-content: space-around;
-gap: 5rpx;
-}
-
-.forecast {
-height: auto;
-width: 30%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 20rpx;
-
-border-radius: 20rpx;
-background-color: #00000000;
-backdrop-filter: blur(1rpx);
-}
-
-.other-container {
-height: 100%;
-width: 100%;
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-border: 1px solid rgb(92, 92, 92);
-gap: 20rpx;
-}
-.each-day {
-width: 45%;
-height: 50%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 40rpx;
-border: none;
-border-radius: 20rpx;
-backdrop-filter: blur(5rpx);
-transition: background-color 0.5s ease; /* 添加过渡效果 */
-}
-.day, .night {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 10rpx;
-}
-
-/*主题切换相关*/
-/* 默认主题 */
-.page1-default {
-background-image: url('https://data-wyzmv.kinsta.page/image/azure-cloud.png');
-color: #ffffff;
-}
-.page2-default {
-background-image: url('https://data-wyzmv.kinsta.page/image/up-sky.png');
-color: #ffffff;
-}
-.each-day-default {
-background-color: #537bff33;
-}
-
-/* 晴天主题 */
-.page1-sunny {
-background-image: url('https://data-wyzmv.kinsta.page/image/sunny2.png');
-color: #ffd000;
-}
-.page2-sunny {
-background-image: url('https://data-wyzmv.kinsta.page/image/sunny1.png');
-color: #ffd000;
-}
-.each-day-sunny {
-background-color: #55d7ff2a;
-}
-
-/* 多云主题 */
-.page1-cloudy {
-background-image: url('https://data-wyzmv.kinsta.page/image/cloudy1.png');
-color: #8d5c00;
-}
-.page2-cloudy {
-background-image: url('https://data-wyzmv.kinsta.page/image/cloudy2.png');
-color: #ffe260;
-}
-.each-day-cloudy {
-background-color: #ffffff2c;
-}
-
-/* 阴天主题 */
-.page1-overcast {
-background-image: url('https://data-wyzmv.kinsta.page/image/overcast1.png');
-color: #6d6d6d;
-}
-.page2-overcast {
-background-image: url('https://data-wyzmv.kinsta.page/image/overcast2.png');
-color: #ffffff;
-}
-.each-day-overcast {
-background-color: #0000001e;
-}
-
-/* 雨天主题 */
-.page1-rainy {
-background-image: url('https://data-wyzmv.kinsta.page/image/rainy2.png');
-color: #79c3ff;
-}
-.page2-rainy {
-background-image: url('https://data-wyzmv.kinsta.page/image/rainy1.png');
-color: #a8a8a8;
-}
-.each-day-rainy {
-background-color: #00000023;
-}
-
-/* 雪天主题 */
-.page1-snowy {
-background-image: url('https://data-wyzmv.kinsta.page/image/snowy1.png');
-color: #ffffff;
-}
-.page2-snowy {
-background-image: url('https://data-wyzmv.kinsta.page/image/snowy2.png');
-color: #ffffff;
-}
-.each-day-snowy {
-background-color: #bde0ff38;
-}
+  }
+  
+  /* 以下保持不变 */
+  #icon1 { height: 100px; width: 100px; }
+  .icon2 { height: 75px; width: 75px; }
+  .icon3 { height: 50px; width: 50px; }
+  
+  .main-container {
+    display: flex;
+    height: 70%;
+    width: 100%;
+    max-width: 800px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    
+  }
+  
+  /*main-container 中的元素*/
+  #temperature { margin-top: 50px; font-size: 100px; }
+  #tempRange { font-size: 20px; }
+  #weather { font-size: 25px; }
+  #location { font-size: 20px; }
+  #week { font-size: large; }
+  #reporttime { margin-top: auto; font-size: large; }
+  
+  .forecast-container {
+    display: flex;
+    height: 30%;
+    width: 100%;
+    justify-content: space-around;
+    gap: 5px;
+  }
+  
+  .forecast {
+    height: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    border-radius: 10px;
+    background-color: #00000000;
+    backdrop-filter: blur(1px);
+  }
+  
+  .other-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid rgb(92, 92, 92);
+    gap: 20rpx;
+  }
+  .each-day {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.5s ease; /* 添加过渡效果 */
+  }
+  .day, .night {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /*主题切换相关*/
+  /* 默认主题 */
+  .page1-default {
+    background-image: url('https://data-wyzmv.kinsta.page/image/azure-cloud.png');
+    color: #ffffff;
+  }
+  .page2-default {
+    background-image: url('https://data-wyzmv.kinsta.page/image/up-sky.png');
+    color: #ffffff;
+  }
+  .each-day-default {
+    background-color: #537bff33;
+  }
+  
+  /* 晴天主题 */
+  .page1-sunny {
+    background-image: url('https://data-wyzmv.kinsta.page/image/sunny2.png');
+    color: #ffd000;
+  }
+  .page2-sunny {
+    background-image: url('https://data-wyzmv.kinsta.page/image/sunny1.png');
+    color: #ffd000;
+  }
+  .each-day-sunny {
+    background-color: #55d7ff2a;
+  }
+  
+  /* 多云主题 */
+  .page1-cloudy {
+    background-image: url('https://data-wyzmv.kinsta.page/image/cloudy1.png');
+    color: #8d5c00;
+  }
+  .page2-cloudy {
+    background-image: url('https://data-wyzmv.kinsta.page/image/cloudy2.png');
+    color: #ffe260;
+  }
+  .each-day-cloudy {
+    background-color: #ffffff2c;
+  }
+  
+  /* 阴天主题 */
+  .page1-overcast {
+    background-image: url('https://data-wyzmv.kinsta.page/image/overcast1.png');
+    color: #6d6d6d;
+  }
+  .page2-overcast {
+    background-image: url('https://data-wyzmv.kinsta.page/image/overcast2.png');
+    color: #ffffff;
+  }
+  .each-day-overcast {
+    background-color: #0000001e;
+  }
+  
+  /* 雨天主题 */
+  .page1-rainy {
+    background-image: url('https://data-wyzmv.kinsta.page/image/rainy2.png');
+    color: #79c3ff;
+  }
+  .page2-rainy {
+    background-image: url('https://data-wyzmv.kinsta.page/image/rainy1.png');
+    color: #a8a8a8;
+  }
+  .each-day-rainy {
+    background-color: #00000023;
+  }
+  
+  /* 雪天主题 */
+  .page1-snowy {
+    background-image: url('https://data-wyzmv.kinsta.page/image/snowy1.png');
+    color: #ffffff;
+  }
+  .page2-snowy {
+    background-image: url('https://data-wyzmv.kinsta.page/image/snowy2.png');
+    color: #ffffff;
+  }
+  .each-day-snowy {
+    background-color: #bde0ff38;
+  }
