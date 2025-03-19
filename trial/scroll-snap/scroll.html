@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* 防止 body 滚动 */
+    }
+    .container {
+      height: 100vh; /* 占满视口高度 */
+      overflow-y: scroll; /* 启用垂直滚动 */
+      scroll-snap-type: y mandatory; /* 强制对齐到页面 */
+      scroll-behavior: smooth; /* 平滑滚动 */
+    }
+    .page {
+      height: 100vh; /* 每个页面占满视口高度 */
+      scroll-snap-align: start; /* 对齐到页面顶部 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      background-color: #f0f0f0;
+    }
+    .page:nth-child(odd) {
+      background-color: #e0e0e0; /* 奇数页面不同背景色 */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page">页面 1</div>
+    <div class="page">页面 2</div>
+    <div class="page">页面 3</div>
+    <div class="page">页面 4</div>
+  </div>
+</body>
+</html>

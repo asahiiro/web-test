@@ -69,17 +69,13 @@ function lastThreeDaysForecast(forecastData) {
             week.textContent = getWeekText(parseInt(day.week));
 
             const daywind = document.createElement("p");
-            daywind.textContent = day.daywind;
-
-            const daypower = document.createElement("p");
-            daypower.textContent = day.daypower;
+            daywind.textContent = `${day.daywind}风 ${day.daypower}级`;
 
             container.appendChild(icon);
             container.appendChild(fweather);
             container.appendChild(tempRange);
-            container.appendChild(week);
             container.appendChild(daywind);
-            container.appendChild(daypower);
+            container.appendChild(week);
         }
     });
 }
@@ -96,11 +92,21 @@ function fourDaysForecast(forecastData) {
             container.appendChild(week);
 
             const day = document.createElement("div");
-            day.innerHTML = `<p>日间</p><img src="${getWeatherIcon(forecast.dayweather, true)}" class="icon3"><p>${forecast.dayweather}</p><p>${forecast.daytemp}°C</p><p>${forecast.daywind} ${forecast.daypower}级</p>`;
+            day.className = 'day';
+            day.innerHTML = `<p>日间</p>
+            <img src="${getWeatherIcon(forecast.dayweather, true)}" class="icon3">
+            <p>${forecast.dayweather}</p>
+            <p>${forecast.daytemp}°C</p>
+            <p>${forecast.daywind}风 ${forecast.daypower}级</p>`;
             container.appendChild(day);
 
             const night = document.createElement("div");
-            night.innerHTML = `<p>夜间</p><img src="${getWeatherIcon(forecast.nightweather, false)}" class="icon3"><p>${forecast.nightweather}</p><p>${forecast.nighttemp}°C</p><p>${forecast.nightwind} ${forecast.nightpower}级</p>`;
+            night.className = 'night';
+            night.innerHTML = `<p>夜间</p>
+            <img src="${getWeatherIcon(forecast.nightweather, false)}" class="icon3">
+            <p>${forecast.nightweather}</p>
+            <p>${forecast.nighttemp}°C</p>
+            <p>${forecast.nightwind}风 ${forecast.nightpower}级</p>`;
             container.appendChild(night);
         }
     });
