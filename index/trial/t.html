@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>自然云朵分布</title>
+  <style>
+    .sky {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom, #87CEEB, #E0F6FF); /* 天空渐变背景 */
+      overflow: hidden;
+    }
+    .cloud {
+      position: absolute;
+      background-image: url('https://data-wyzmv.kinsta.page/icon/cloud.png'); /* 替换为你的云朵图片 */
+      background-size: cover;
+      opacity: 0.8; /* 轻微透明，增加层次感 */
+      animation: drift 20s linear infinite; /* 漂浮动画 */
+    }
+    @keyframes drift {
+      0% { transform: translateX(-100px); }
+      100% { transform: translateX(100vw); }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <!-- 云朵将由JavaScript动态生成 -->
+  </div>
+  <script>
+    const sky = document.querySelector('.sky');
+    const cloudCount = 10; // 生成10朵云
+    for (let i = 0; i < cloudCount; i++) {
+      const cloud = document.createElement('div');
+      cloud.className = 'cloud';
+      // 随机大小
+      const size = Math.random() * 100 + 50; // 大小范围：50px到150px
+      cloud.style.width = `${size}px`;
+      cloud.style.height = `${size / 2}px`;
+      // 随机位置
+      cloud.style.left = `${Math.random() * 100}vw`; // 水平随机
+      cloud.style.top = `${Math.random() * 80}vh`; // 垂直随机，避免太低
+      // 随机动画延迟
+      cloud.style.animationDelay = `${Math.random() * 20}s`;
+      // 随机层叠顺序
+      cloud.style.zIndex = Math.floor(Math.random() * 10);
+      sky.appendChild(cloud);
+    }
+  </script>
+</body>
+</html>

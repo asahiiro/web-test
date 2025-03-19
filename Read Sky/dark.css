@@ -1,15 +1,8 @@
+
 @font-face {
-    font-family: "Bigblue";
-    src: url("font/BigBlueTerminal/BigBlueTermPlusNerdFontPropo-Regular.ttf");
-  }
-  @font-face {
-      font-family: "Cinzel";
-      src: url("font/Cinzel/static/Cinzel-Regular.ttf");
-  }
-  @font-face {
-      font-family: "departure";
-      src: url("font/DepartureMono/DepartureMonoNerdFont-Regular.otf");
-  }
+  font-family: "departure";
+  src: url("https://data-wyzmv.kinsta.page/font/DepartureMono/DepartureMonoNerdFont-Regular.otf");
+}
   html {
       height: 100%;
       overflow: auto; /* 允许页面滚动 */
@@ -36,7 +29,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url("image/night.png");
+      background-image: url("https://data-wyzmv.kinsta.page/image/night.png");
       background-repeat: repeat; /* 关键：启用重复 */
       background-size: 100%; /* 控制重复密度 */
       transform: translateZ(-7px) scale(6); /* 通过scale抵消Z轴位移 */
@@ -116,8 +109,8 @@
       width:auto;
       height:auto;
   
-      background-image: url('icon/moonstar.png');
-      background-size: 45px 45px;
+      background-image: url('https://data-wyzmv.kinsta.page/icon/cloudy-night.png');
+      background-size: 50px 50px;
       background-position: center;
       background-repeat: no-repeat;
       background-color: transparent;
@@ -138,7 +131,7 @@
   
   
   h1{
-      font-family: "Bigblue";
+      font-family: "departure";
       text-transform: capitalize;
       font-variant:small-caps;
       font-size: 5vw;
