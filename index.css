@@ -11,7 +11,7 @@ html {
 /* 小屏幕优化 */
 @media (max-width: 768px) {
     html {
-        font-size: 14px; /* 减小根字体大小，适配小屏幕 */
+        font-size: 20px; /* 减小根字体大小，适配小屏幕 */
     }
     .sky-line {
         width: 1rem; /* 缩小宽度 */
