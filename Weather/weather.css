@@ -1,137 +1,147 @@
 /* pages/index/index.wxss */
 @font-face {
-    font-family: 'Pixel';
-    src: url('https://data-wyzmv.kinsta.page/font/ark-pixel-font-12px/ark-pixel-12px-monospaced-zh_cn.ttf');
-  }
-  
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
+  font-family: 'Pixel';
+  src: url('https://data-wyzmv.kinsta.page/font/ark-pixel-font-12px/ark-pixel-12px-monospaced-zh_cn.ttf');
+}
 
+@media (max-width: 768px) {
+  html {
+      font-size: 10px; /* 小屏幕缩小 */
+  }
+}
 
-  .loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media (min-width: 1200px) {
+  html {
+      font-size: 18px; /* 大屏幕放大 */
+  }
+}
+
+html, body {
+  font-size: 16px; /* 默认值 */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #load-img {
-    height: 150px;
-    width: auto;
+  height: 9.375rem; /* 150px / 16 = 9.375rem */
+  width: auto;
 }
-  .page1, .page2 {
-    font-family: 'Pixel';
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    scroll-snap-align: start;
-    transition: background-image 0.5s ease, color 0.5s ease; /* 添加过渡效果 */
-  }
-  
-  .page1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-  }
-  
-  /* 以下保持不变 */
-  #icon1 { height: 100px; width: 100px; }
-  .icon2 { height: 75px; width: 75px; }
-  .icon3 { height: 50px; width: 50px; }
-  
-  .main-container {
-    display: flex;
-    height: 70%;
-    width: 100%;
-    max-width: 800px;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    
-  }
-  
-  /*main-container 中的元素*/
-  #temperature { margin-top: 50px; font-size: 120px; }
-  #tempRange { font-size: 30px; }
-  #weather { font-size: 35px; }
-  #city { font-size: 30px; }
-  #week { font-size: 27px; }
-  #reporttime { margin-top: auto; font-size: 25px; }
-  
-  .forecast-container {
-    display: flex;
-    height: 30%;
-    width: 100%;
-    justify-content: space-around;
-    gap: 5px;
-    
-  }
-  
-  .forecast {
-    height: auto;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    
-    border-radius: 10px;
-    background-color: #00000000;
-    backdrop-filter: blur(1px);
-  }
-  
-  .other-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    border: 1px solid rgb(92, 92, 92);
-    gap: 20px;
-    overflow: auto;
-  }
-  .each-day {
-    width: 40%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    border: none;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    transition: background-color 0.5s ease;
-  }
-  .day, .night {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-  }
+.page1, .page2 {
+  font-family: 'Pixel';
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  transition: background-image 0.5s ease, color 0.5s ease;
+}
 
-  .forecast > *,.day > *, .night > * {
-    font-size: large;
-    margin : 0px;
-  }
-    
+.page1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 以下保持不变 */
+#icon1 { height: 6rem; width: 6rem; } /* 100px / 16 = 6.25rem */
+.icon2 { height: 4.5rem; width: 4.5rem; } /* 75px / 16 = 4.6875rem */
+.icon3 { height: 3rem; width: 3rem; } /* 50px / 16 = 3.125rem */
+
+.main-container {
+  display: flex;
+  height: 70%;
+  width: 100%;
+  max-width: 50rem; /* 800px / 16 = 50rem */
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem; /* 15px / 16 = 0.9375rem */
+}
+
+/* main-container 中的元素 */
+#temperature { margin-top: 2rem; font-size: 7rem; } /* 50px -> 3.125rem, 120px -> 7.5rem */
+#tempRange { font-size: 1.5rem; } /* 30px / 16 = 1.875rem */
+#weather { font-size: 2rem; } /* 35px / 16 = 2.1875rem */
+#city { font-size: 1.5rem; } /* 30px / 16 = 1.875rem */
+#week { font-size: 1.5rem; } /* 27px / 16 = 1.6875rem */
+#reporttime { margin-top: auto; font-size: 1.5rem; } /* 25px / 16 = 1.5625rem */
+
+.forecast-container {
+  display: flex;
+  height: auto;
+  width: 100%;
+  justify-content: space-around;
+  gap: 0.3rem; /* 5px / 16 = 0.3125rem */
+}
+
+.forecast {
+  height: auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* 15px / 16 = 0.9375rem */
+  border-radius: 0.6rem; /* 10px / 16 = 0.625rem */
+  background-color: #00000000;
+  backdrop-filter: blur(0.06rem); /* 1px / 16 = 0.0625rem */
+}
+
+.other-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 0.0625rem solid rgb(92, 92, 92); /* 1px / 16 = 0.0625rem */
+  gap: 1.25rem; /* 20px / 16 = 1.25rem */
+  overflow: auto;
+}
+
+.each-day {
+  width: 40%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* 25px / 16 = 1.5625rem */
+  border: none;
+  border-radius: 1.25rem; /* 20px / 16 = 1.25rem */
+  backdrop-filter: blur(0.3125rem); /* 5px / 16 = 0.3125rem */
+  transition: background-color 0.5s ease;
+}
+
+.day, .night {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1rem; /* 5px / 16 = 0.3125rem */
+}
+
+.forecast > *, .day > *, .night > * {
+  font-size: 1rem; /* 'large' 转换为 1rem，可根据需要调整 */
+  margin: 0;
+}
   
   /*主题切换相关*/
   /* 默认主题 */

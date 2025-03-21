@@ -1,7 +1,59 @@
 @font-face {
     font-family: 'Pixel';
     src: url('https://data-wyzmv.kinsta.page/font/ark-pixel-font-12px/ark-pixel-12px-monospaced-zh_cn.ttf');
-  }
+}
+
+/* 默认根字体大小 */
+html {
+    font-size: 16px;
+}
+
+/* 小屏幕优化 */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px; /* 减小根字体大小，适配小屏幕 */
+    }
+    .sky-line {
+        width: 1rem; /* 缩小宽度 */
+    }
+    .manual-cloud {
+        width: 7.5rem; /* 150px -> 9.5rem，在小屏幕上缩小 */
+        height: 7.5rem;
+    }
+    .manual-cloud a {
+        font-size: 0.875rem; /* 14px / 16 ≈ 0.875rem，略微缩小 */
+    }
+    /* 调整云朵位置，防止重叠 */
+    .manual-cloud:nth-child(2) {
+        left: 35%;
+        top: 15%;
+    }
+    .manual-cloud:nth-child(3) {
+        left: 65%;
+        top: 25%;
+    }
+    .manual-cloud:nth-child(4) {
+        left: 35%;
+        top: 35%;
+    }
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    html {
+        font-size: 18px; /* 放大根字体大小 */
+    }
+    .sky-line {
+        width: 1.5rem; /* 稍微放大 */
+    }
+    .manual-cloud {
+        width: 10.5rem; /* 稍微放大 */
+        height: 10.5rem;
+    }
+    .manual-cloud a {
+        font-size: 1.25rem; /* 放大字体 */
+    }
+}
 
 .sky {
     position: relative;
@@ -17,17 +69,17 @@
     position: absolute;
     left: 50%;
     top: 0;
-    width: 20px;
+    width: 1.25rem; /* 20px / 16 = 1.25rem */
     height: 100%;
     background: linear-gradient(to bottom, #01319f, #42b1fb);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
     transform: translateX(-50%);
 }
 
 .manual-cloud {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 9.5rem; /* 150px / 16 ≈ 9.375rem，调整为 9.5rem */
+    height: 9.5rem;
     background-image: url('https://data-wyzmv.kinsta.page/icon/cloud.png');
     background-size: cover;
     display: flex;
@@ -41,10 +93,10 @@
     font-family: 'Pixel';
     color: rgb(0, 10, 90);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1rem; /* 14px / 16 ≈ 0.875rem，调整为 1rem */
 }
 
-/* 初始状态：只定义transform的translateX和rotate */
+/* 初始状态：只定义 transform 的 translateX 和 rotate */
 .manual-cloud:nth-child(2) { /* 页面1 */
     left: 40%;
     top: 10%;
@@ -83,29 +135,29 @@
 }
 
 /* 应用动画到对应的云朵 */
-.manual-cloud:nth-child(2) { /* 页面1的云朵 */
+.manual-cloud:nth-child(2) {
     position: absolute;
     top: 10%;
     animation: sway-top-page1 4s infinite ease-in-out;
 }
 
-.manual-cloud:nth-child(4) { /* 页面3的云朵 */
+.manual-cloud:nth-child(4) {
     position: absolute;
     top: 30%;
     animation: sway-top-page3 4s infinite ease-in-out;
 }
 
-/* 悬停效果：只控制scale和filter */
+/* 悬停效果：只控制 scale 和 filter */
 .manual-cloud:hover {
-    transform: translateX(-50%) rotate(-5deg) scale(1.2); /* 默认页面1和3 */
-    filter: drop-shadow(4px 5px  rgba(0, 0, 0, 0.457));
+    transform: translateX(-50%) rotate(-5deg) scale(1.2);
+    filter: drop-shadow(0.25rem 0.3125rem rgba(0, 0, 0, 0.457));
 }
 
 .manual-cloud:nth-child(3):hover { /* 页面2 */
     transform: translateX(-50%) rotate(5deg) scale(1.2);
 }
 
-/* 动画：控制top属性 */
+/* 动画：控制 top 属性 */
 @keyframes sway-top {
     0% { top: 10%; }
     50% { top: 9.5%; }
@@ -129,8 +181,7 @@
 }
 
 @keyframes sway-dynamic {
-    0% { transform: translateX(-50%) rotate(-5deg) translateY(0px); }
-    50% { transform: translateX(-50%) rotate(-5deg) translateY(-5px); }
-    100% { transform: translateX(-50%) rotate(-5deg) translateY(0px); }
+    0% { transform: translateX(-50%) rotate(-5deg) translateY(0); }
+    50% { transform: translateX(-50%) rotate(-5deg) translateY(-0.3125rem); }
+    100% { transform: translateX(-50%) rotate(-5deg) translateY(0); }
 }
-
