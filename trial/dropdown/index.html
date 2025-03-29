@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <style>
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: inline-block;
+            width: 6rem;
+            height: 3rem;
+            background-color: antiquewhite;
+            text-align: center;
+        }   
+        li a:hover , dropDown:hover .btn{
+            background-color: bisque;
+        }
+        .content {
+            position: absolute;
+            display: none;
+        }
+        .content a{
+            background-color: aliceblue;
+            text-align: center;
+        }
+        btn:hover a{
+            display: block;
+        }
+        </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">config</a></li>
+            <li class="dropDown">
+                <a href="" class="btn">dropDown</a>
+                <div class="content">
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

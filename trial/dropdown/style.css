@@ -1,0 +1,23 @@
+
+
+ul {
+    list-style-type: none;
+}
+li {
+    float: left;
+    position: relative;
+    width: 5rem;
+    height: 2rem;
+    background-color: aliceblue;
+}
+.content {
+    position: absolute;
+}
+.content a{
+    display: none;
+    background-color: aliceblue;
+    text-align: center;
+}
+.dropDown:hover .content a{
+    display: block;
+}
