@@ -16,7 +16,7 @@ li {
 .content a{
     display: none;
     background-color: aliceblue;
-    text-align: center;
+    text-align: center; 
 }
 .dropDown:hover .content a{
     display: block;
